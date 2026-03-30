@@ -136,12 +136,6 @@ npm i -g vercel
 vercel
 ```
 
-**Netlify:**
-```bash
-npm run build
-# Drag and drop the `dist/` folder to netlify.com/drop
-```
-
 Build output: `dist/` folder
 Build command: `npm run build`
 Publish directory: `dist`
