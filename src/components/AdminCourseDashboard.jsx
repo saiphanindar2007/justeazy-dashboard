@@ -28,7 +28,10 @@ export default function AdminCourseDashboard({ user, courses, allStudents, assig
       semester: 'Sem 4 · 2026',
       enrolledStudents: allStudents.map(s => s.id), // enroll all students for demo
     };
-    onUpdateCourses([...courses, created]);
+    const allCourses = JSON.parse(localStorage.getItem("courses")) || [];
+    const updatedCourses = [...allCourses, created];
+    localStorage.setItem("courses", JSON.stringify(updatedCourses));
+    onUpdateCourses(updatedCourses);
     setShowCreate(false);
     setNewCourse({ name:'', code:'', color:'#5b8fff' });
     addToast(`Course "${created.name}" created!`, 'success');
